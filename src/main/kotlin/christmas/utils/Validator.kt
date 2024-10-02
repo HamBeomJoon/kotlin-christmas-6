@@ -32,4 +32,8 @@ object Validator {
         require(orderList.distinct().size == orderList.size) { ChristmasException.INVALID_MENU.getMessage() }
     }
 
+    fun isValidMenuSum(menuSum: Int) {
+        require(menuSum <= 20) { ChristmasException.INVALID_MENU.getMessage() }
+    }
+
 }

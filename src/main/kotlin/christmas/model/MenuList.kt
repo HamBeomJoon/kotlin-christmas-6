@@ -21,4 +21,8 @@ class MenuList {
     fun getMenus(): List<String> {
         return menuList.map { it.first }
     }
+
+    fun getDrinks(): List<String> {
+        return listOf("제로콜라", "레드와인", "샴페인")
+    }
 }

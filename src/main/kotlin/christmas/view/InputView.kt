@@ -19,6 +19,7 @@ class InputView {
         println("주문하실 메뉴를 메뉴와 개수를 알려 주세요. (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)")
         val orderList = mutableListOf<String>()
         var menuSum = 0
+        var drinkCount = 0
         val menus = Console.readLine().split(",")
 
         for (menu in menus) {
@@ -29,10 +30,11 @@ class InputView {
 
             orderList.add(name)
             menuSum += count.toInt()
+            if (name in menuList.getDrinks()) drinkCount++
         }
         Validator.isValidUniqueMenu(orderList)
         Validator.isValidMenuSum(menuSum)
-
+        Validator.isNotOnlyDrink(drinkCount == menus.size)
     }
 
 }

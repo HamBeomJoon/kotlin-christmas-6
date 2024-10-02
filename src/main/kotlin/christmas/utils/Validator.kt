@@ -36,4 +36,8 @@ object Validator {
         require(menuSum <= 20) { ChristmasException.INVALID_MENU.getMessage() }
     }
 
+    fun isNotOnlyDrink(isOnlyDrink: Boolean) {
+        require(!isOnlyDrink) { ChristmasException.INVALID_MENU.getMessage() }
+    }
+
 }

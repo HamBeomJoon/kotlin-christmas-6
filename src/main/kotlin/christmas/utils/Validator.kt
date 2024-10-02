@@ -18,4 +18,8 @@ object Validator {
     fun isValidMenuType(menu: String) {
         require("-" in menu) { ChristmasException.INVALID_MENU.getMessage() }
     }
+
+    fun isValidMenuName(name: String, menuList: MenuList) {
+        require(name in menuList.getMenus()) { ChristmasException.INVALID_MENU.getMessage() }
+    }
 }

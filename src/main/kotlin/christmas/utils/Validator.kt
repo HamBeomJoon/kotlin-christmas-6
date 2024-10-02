@@ -28,4 +28,8 @@ object Validator {
         require(count.toInt() > 0) { ChristmasException.INVALID_MENU.getMessage() }
     }
 
+    fun isValidUniqueMenu(orderList: List<String>) {
+        require(orderList.distinct().size == orderList.size) { ChristmasException.INVALID_MENU.getMessage() }
+    }
+
 }

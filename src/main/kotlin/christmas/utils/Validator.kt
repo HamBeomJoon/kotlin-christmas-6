@@ -22,4 +22,10 @@ object Validator {
     fun isValidMenuName(name: String, menuList: MenuList) {
         require(name in menuList.getMenus()) { ChristmasException.INVALID_MENU.getMessage() }
     }
+
+    fun isValidMenuCount(count: String) {
+        require(count.toIntOrNull() != null) { ChristmasException.INVALID_MENU.getMessage() }
+        require(count.toInt() > 0) { ChristmasException.INVALID_MENU.getMessage() }
+    }
+
 }

@@ -15,4 +15,7 @@ object Validator {
         require(input.toInt() in 1..31) { ChristmasException.INVALID_RANGE.getMessage() }
     }
 
+    fun isValidMenuType(menu: String) {
+        require("-" in menu) { ChristmasException.INVALID_MENU.getMessage() }
+    }
 }

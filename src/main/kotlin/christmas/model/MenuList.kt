@@ -25,4 +25,8 @@ class MenuList {
     fun getDrinks(): List<String> {
         return listOf("제로콜라", "레드와인", "샴페인")
     }
+
+    fun getMenuPrice(key: String): Int? {
+        return menuList[key]
+    }
 }

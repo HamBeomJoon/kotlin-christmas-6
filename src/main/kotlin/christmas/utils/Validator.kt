@@ -28,8 +28,9 @@ object Validator {
         require(count.toInt() > 0) { ChristmasException.INVALID_MENU.getMessage() }
     }
 
-    fun isValidUniqueMenu(orderList: List<String>) {
-        require(orderList.distinct().size == orderList.size) { ChristmasException.INVALID_MENU.getMessage() }
+    fun isValidUniqueMenu(orderList: MutableMap<String, Int>) {
+        val firstElements = orderList.map { it.key }
+        require(firstElements.distinct().size == firstElements.size) { ChristmasException.INVALID_MENU.getMessage() }
     }
 
     fun isValidMenuSum(menuSum: Int) {

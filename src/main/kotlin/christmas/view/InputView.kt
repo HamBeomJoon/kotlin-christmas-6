@@ -15,9 +15,9 @@ class InputView {
         return input.toInt()
     }
 
-    fun inputMenu(menuList: MenuList) {
+    fun inputMenu(menuList: MenuList): MutableMap<String, Int> {
         println("주문하실 메뉴를 메뉴와 개수를 알려 주세요. (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)")
-        val orderList = mutableListOf<String>()
+        val orderList = mutableMapOf<String, Int>()
         var menuSum = 0
         var drinkCount = 0
         val menus = Console.readLine().split(",")
@@ -28,13 +28,15 @@ class InputView {
             Validator.isValidMenuName(name, menuList)
             Validator.isValidMenuCount(count)
 
-            orderList.add(name)
+            orderList[name] = count.toInt()
             menuSum += count.toInt()
             if (name in menuList.getDrinks()) drinkCount++
         }
         Validator.isValidUniqueMenu(orderList)
         Validator.isValidMenuSum(menuSum)
         Validator.isNotOnlyDrink(drinkCount == menus.size)
+
+        return orderList
     }
 
 }

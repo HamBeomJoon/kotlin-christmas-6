@@ -11,7 +11,8 @@ class ChristmasController {
     private val menuList = MenuList()
 
     fun run() {
-        inputView.inputDate()
-        inputView.inputMenu(menuList)
+        val date = inputView.inputDate()
+
+        val orderList = inputView.inputMenu(menuList)
     }
 }

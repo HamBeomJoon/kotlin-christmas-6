@@ -15,5 +15,10 @@ class ChristmasController {
         val date = inputView.inputDate()
 
         val orderList = inputView.inputMenu(menuList)
+
+        outputView.printEventDay(date)
+
+        outputView.printMenu(orderList)
+
     }
 }

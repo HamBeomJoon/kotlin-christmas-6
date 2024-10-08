@@ -22,6 +22,9 @@ class ChristmasController {
 
         val totalAmount = calculateTotalAmount(orderList)
         outputView.printTotalAmount(totalAmount)
+
+        outputView.printPresentMenu(totalAmount)
+
     }
 
     private fun calculateTotalAmount(orderList: MutableMap<String, Int>): Int {

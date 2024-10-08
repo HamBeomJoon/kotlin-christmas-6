@@ -17,4 +17,12 @@ class OutputView {
         println("${amount.formatWithCommas()}원")
     }
 
+    fun printPresentMenu(amount: Int) {
+        println("\n<증정 메뉴>")
+        if (amount >= 120000) {
+            println("샴페인 1개")
+        } else {
+            println("없음")
+        }
+    }
 }

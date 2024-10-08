@@ -36,4 +36,9 @@ class OutputView {
         if (benefitList[4] != 0) println("증정 이벤트: -${benefitList[4].formatWithCommas()}원")
     }
 
+    fun printBenefitPrice(amount: Int) {
+        println("\n<총혜택 금액>")
+        println("-${amount.formatWithCommas()}원")
+    }
+
 }

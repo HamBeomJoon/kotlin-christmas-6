@@ -27,6 +27,9 @@ class ChristmasController {
 
         val benefitList = checkBenefit(date, orderList, totalAmount)
         outputView.printBenefitList(benefitList)
+
+        val benefitSum = benefitList.sum()
+        outputView.printBenefitPrice(benefitSum)
     }
 
     private fun calculateTotalAmount(orderList: MutableMap<String, Int>): Int {

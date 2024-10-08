@@ -9,6 +9,7 @@ class ChristmasController {
     private val outputView = OutputView()
 
     private val menuList = MenuList()
+    private val benefitList = listOf<Int>()
 
     fun run() {
         outputView.printStartPlanner()
@@ -25,6 +26,7 @@ class ChristmasController {
 
         outputView.printPresentMenu(totalAmount)
 
+        checkBenefit(date, orderList, totalAmount)
     }
 
     private fun calculateTotalAmount(orderList: MutableMap<String, Int>): Int {
@@ -37,4 +39,9 @@ class ChristmasController {
         return amount
     }
 
+    private fun checkBenefit(date: Int, orderList: MutableMap<String, Int>, totalAmount: Int): List<Int> {
+        val benefitList = mutableListOf<Int>()
+        if (date > 25) benefitList.add(0)
+        else benefitList.add(1000 + (date - 1) * 100)
+    }
 }

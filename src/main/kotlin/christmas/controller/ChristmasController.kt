@@ -30,6 +30,9 @@ class ChristmasController {
 
         val benefitSum = benefitList.sum()
         outputView.printBenefitPrice(benefitSum)
+
+        if (benefitList[4] == 0) outputView.printFinalPrice(totalAmount - benefitSum)
+        else outputView.printFinalPrice(totalAmount - benefitSum + 25000)
     }
 
     private fun calculateTotalAmount(orderList: MutableMap<String, Int>): Int {

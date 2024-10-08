@@ -41,4 +41,9 @@ class OutputView {
         println("-${amount.formatWithCommas()}원")
     }
 
+    fun printFinalPrice(amount: Int) {
+        println("\n<할인 후 예상 결제 금액>")
+        println("${amount.formatWithCommas()}원")
+    }
+
 }

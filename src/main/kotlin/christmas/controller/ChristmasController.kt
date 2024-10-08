@@ -33,6 +33,8 @@ class ChristmasController {
 
         if (benefitList[4] == 0) outputView.printFinalPrice(totalAmount - benefitSum)
         else outputView.printFinalPrice(totalAmount - benefitSum + 25000)
+
+        outputView.printBadge(benefitSum)
     }
 
     private fun calculateTotalAmount(orderList: MutableMap<String, Int>): Int {

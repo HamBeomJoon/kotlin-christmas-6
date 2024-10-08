@@ -46,4 +46,11 @@ class OutputView {
         println("${amount.formatWithCommas()}원")
     }
 
+    fun printBadge(amount: Int) {
+        println("\n<12월 이벤트 배지>")
+        if (amount < 5000) println("없음")
+        else if (amount < 10000) println("별")
+        else if (amount < 20000) println("트리")
+        else println("산타")
+    }
 }

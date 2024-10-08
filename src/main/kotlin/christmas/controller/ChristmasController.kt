@@ -58,6 +58,12 @@ class ChristmasController {
         if (date in starDay) benefitList.add(1000)
         else benefitList.add(0)
 
+        if (totalAmount > 120000) benefitList.add(25000)
+        else benefitList.add(0)
+
+        return benefitList
+    }
+
     private fun countDessert(orderList: MutableMap<String, Int>): Int {
         var count = 0
         for (order in orderList) {

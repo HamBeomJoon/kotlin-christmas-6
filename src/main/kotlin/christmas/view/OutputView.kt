@@ -25,4 +25,14 @@ class OutputView {
             println("없음")
         }
     }
+
+    fun printBenefitList(benefitList: List<Int>) {
+        println("\n<혜택 내역>")
+        if (benefitList[0] != 0) println("크리스마스 디데이 할인: -${benefitList[0].formatWithCommas()}원")
+        if (benefitList[1] != 0) println("평일 할인: -${benefitList[1].formatWithCommas()}원")
+        if (benefitList[2] != 0) println("주말 할인: -${benefitList[2].formatWithCommas()}원")
+        if (benefitList[3] != 0) println("특별 할인: -${benefitList[3].formatWithCommas()}원")
+        if (benefitList[4] != 0) println("증정 이벤트: -${benefitList[4].formatWithCommas()}원")
+    }
+
 }

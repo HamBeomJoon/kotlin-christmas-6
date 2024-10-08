@@ -21,7 +21,7 @@ class ChristmasController {
         outputView.printMenu(orderList)
 
         val totalAmount = calculateTotalAmount(orderList)
-        outputView.printTotalAmount(totalAmount)
+        outputView.printTotalPrice(totalAmount)
 
         outputView.printPresentMenu(totalAmount)
 

@@ -12,7 +12,7 @@ class OutputView {
         }
     }
 
-    fun printTotalAmount(amount: Int) {
+    fun printTotalPrice(amount: Int) {
         println("\n<할인 전 총주문 금액>")
         println("${amount.formatWithCommas()}원")
     }

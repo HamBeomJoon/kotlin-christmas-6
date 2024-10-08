@@ -26,6 +26,14 @@ class MenuList {
         return listOf("제로콜라", "레드와인", "샴페인")
     }
 
+    fun getDesserts(): List<String> {
+        return listOf("초코케이크", "아이스크림")
+    }
+
+    fun getMainMenus(): List<String> {
+        return listOf("티본스테이크", "바비큐립", "해산물파스타", "크리스마스파스타")
+    }
+
     fun getMenuPrice(key: String): Int? {
         return menuList[key]
     }

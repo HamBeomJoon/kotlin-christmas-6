@@ -41,7 +41,36 @@ class ChristmasController {
 
     private fun checkBenefit(date: Int, orderList: MutableMap<String, Int>, totalAmount: Int): List<Int> {
         val benefitList = mutableListOf<Int>()
+        val weekendDay = listOf(1, 2, 8, 9, 15, 16, 22, 23, 29, 30)
         if (date > 25) benefitList.add(0)
         else benefitList.add(1000 + (date - 1) * 100)
+
+        if (date in weekendDay) {
+            benefitList.add(0)
+            benefitList.add(countDessert(orderList) * 2023)
+        } else {
+            benefitList.add(countMainMenu(orderList) * 2023)
+            benefitList.add(0)
+        }
+    private fun countDessert(orderList: MutableMap<String, Int>): Int {
+        var count = 0
+        for (order in orderList) {
+            if (order.key in menuList.getDesserts()) {
+                count += order.value
+            }
+        }
+
+        return count
+    }
+
+    private fun countMainMenu(orderList: MutableMap<String, Int>): Int {
+        var count = 0
+        for (order in orderList) {
+            if (order.key in menuList.getMainMenus()) {
+                count += order.value
+            }
+        }
+
+        return count
     }
 }
